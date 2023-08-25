@@ -11,88 +11,81 @@
     android:foregroundGravity="left"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="300dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="300dp">
+            <ImageView
+                android:id="@+id/colorfondo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/label_avaliacao"
+                android:src="@drawable/devanecido"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/devanecido" />
 
-                <ImageView
-                    android:id="@+id/colorfondo"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:contentDescription="@string/label_avaliacao"
-                    android:src="@drawable/devanecido"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/devanecido" />
+            <TextView
+                android:id="@+id/Avaliaçao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-100dp"
+                android:text="@string/label_avaliacao"
+                android:textColor="#000000"
+                android:textSize="45sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/colorfondo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
-                    android:id="@+id/Avaliaçao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="-100dp"
-                    android:text="@string/label_avaliacao"
-                    android:textColor="#000000"
-                    android:textSize="45sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/colorfondo"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.501"
-                    app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_gostou_posto"
+                android:textColor="#000000"
+                android:textSize="26sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/colorfondo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/texto_gostou_posto"
-                    android:textColor="#000000"
-                    android:textSize="26sp"
-                    android:textStyle="normal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/colorfondo"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:progressTint="@color/black"
+                android:progress="@integer/material_motion_duration_long_1"
+                android:secondaryProgressTint="@color/grey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/colorfondo"
+                app:layout_constraintEnd_toEndOf="@+id/colorfondo"
+                app:layout_constraintStart_toStartOf="@+id/colorfondo" />
 
-                <RatingBar
-                    android:id="@+id/ratingBar"
-                    android:progressTint="@color/black"
-                    android:progress="@integer/material_motion_duration_long_1"
-                    android:secondaryProgressTint="@color/grey"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="40dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/colorfondo"
-                    app:layout_constraintEnd_toEndOf="@+id/colorfondo"
-                    app:layout_constraintStart_toStartOf="@+id/colorfondo" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="530dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="530dp">
 
-                <org.osmdroid.views.MapView android:id="@+id/map"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+            <org.osmdroid.views.MapView android:id="@+id/map"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-        </LinearLayout>
-    </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
