@@ -23,9 +23,10 @@ class MainActivity : AppCompatActivity() {
         map = binding.map
         map.setTileSource(TileSourceFactory.MAPNIK)
         val mapController = map.controller
-        map.controller.setZoom(17)
+        map.controller.setZoom(17.0)
         val startPoint = GeoPoint(-23.57396958491518, -46.62320156325983)
         mapController.setCenter(startPoint)
+        map.setMultiTouchControls(true)
     }
 
     override fun onResume() {
